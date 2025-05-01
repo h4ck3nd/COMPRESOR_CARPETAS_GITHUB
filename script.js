@@ -33,10 +33,10 @@ document.getElementById('download-btn').addEventListener('click', async () => {
   
       status.textContent = '¡Descarga completada!';
 
-        // Redirigir después de 5 segundos
+        // Redirigir después de 10 segundos
         setTimeout(() => {
             window.location.href = 'index.html'; // Redirige a index.html
-        }, 5000); // 5000ms = 5 segundos
+        }, 10000); // 10000ms = 10 segundos
 
     } catch (error) {
         console.error(error);

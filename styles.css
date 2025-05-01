@@ -1,195 +1,167 @@
 :root {
-    --font-size: 12px;  /* Reducido el tamaño de la fuente */
-    --line-height: 1.4; /* Ajuste del espaciado entre líneas */
+    --font-size: 12px;
+    --line-height: 1.6;
     --light-green: #2c5700;
     --dark-green: #153d20;
-    --background-color: #f4f6f9;
+    --background-fade: #ffffff21;
+    --font-family: 'Press Start 2P', cursive;
     --primary-color: #28a745;
     --secondary-color: #218838;
-    --font-family: 'Press Start 2P', cursive;  /* Fuente ya establecida */
-    --container-width: 480px;
-}
-
-* {
+  }
+  
+  * {
     box-sizing: border-box;
-}
-
-html {
-    font: var(--font-size) / var(--line-height) 'Press Start 2P', cursive;
-    background: linear-gradient(to bottom, var(--light-green), var(--dark-green)) var(--light-green);
+  }
+  
+  html {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    background: linear-gradient(to bottom, var(--light-green), var(--dark-green));
     color: #fff;
-    word-break: break-word;
     min-width: 320px;
     overflow-y: auto;
-}
-
-body {
-    background: radial-gradient(400px 100px at 50% 100px, #ffffff21, #ffffff0a, #fff0);
-    border: 0.5px solid;
-    border-bottom: none;
+    word-break: break-word;
+  }
+  
+  body {
+    background: radial-gradient(400px 100px at 50% 100px, var(--background-fade), transparent);
+    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    justify-content: center;
     align-items: center;
-}
-
-a {
-    color: inherit;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 0 20px;
-    padding-bottom: 40px;
-    position: relative;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2em;
+    background-color: var(--background-fade);
+    width: 100%;
+  }
+  
+  main {
+    padding: 2em 1em;
     width: 100%;
     max-width: 600px;
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
-    margin: 7vh auto 0.5em;
-    font-size: 1.7em;  /* Reducido el tamaño del título */
-    line-height: 1.4;
-    max-width: none;
-    color: var(--light-green);
-}
-
-h1 img {
-    width: 250px;  /* Ajustado el tamaño de la imagen */
-    margin: auto;
-    display: block;
-}
-
-h1 a {
+    font-size: 1.6em;
+    margin-bottom: 1.5em;
+    color: #ffffff;
+  }
+  
+  h1 a {
+    color: inherit;
     text-decoration: none;
-}
-
-.container {
-    background-color: #ffffff;
-    padding: 30px;  /* Reducido el padding */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: var(--container-width);
-    text-align: center;
-}
-
-.input-group {
-    margin: 10px 0;  /* Reducido el margen */
-}
-
-input[type="text"], input[type="password"], input[type="url"] {
+  }
+  
+  input[type="url"],
+  input[type="text"],
+  input[type="password"] {
     width: 100%;
-    padding: 8px;  /* Reducido el padding */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 8px;
-    font-size: 14px;  /* Ajuste del tamaño del texto en inputs */
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border-radius: 4px;
+    border: none;
     background-color: #153d2088;
     color: #fff;
-}
-
-input::placeholder {
+    font-family: var(--font-family);
+  }
+  
+  input::placeholder {
     color: #ffffff80;
-}
-
-button {
-    padding: 10px 18px;  /* Ajustado el padding del botón */
+  }
+  
+  .token-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 1em 0;
+  }
+  
+  .token-group a {
+    background-color: var(--light-green);
+    padding: 0.5em 0.8em;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  
+  .token-group a:hover {
+    background-color: #1b4332;
+  }
+  
+  button {
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
+    padding: 1em;
+    width: 100%;
+    font-family: var(--font-family);
+    font-size: 12px;
     cursor: pointer;
-    font-size: 14px;  /* Ajustado el tamaño de la fuente del botón */
-    width: 100%;
-    margin-top: 10px;
-}
-
-button:hover {
+    margin-top: 1em;
+  }
+  
+  button:hover {
     background-color: var(--secondary-color);
-}
-
-#status {
-    margin-top: 15px;  /* Ajuste del margen */
-    font-size: 14px;  /* Reducido el tamaño de la fuente del status */
-    color: #333;
-}
-
-#progress-container {
-    margin-top: 20px;  /* Ajuste del margen */
-    width: 100%;
+  }
+  
+  .status {
+    margin-top: 1em;
+    color: #fff;
+    font-size: 10px;
+    word-wrap: break-word;
+  }
+  
+  #progress-container {
     background-color: #e0f7fa;
     border-radius: 10px;
-    height: 15px;  /* Ajuste de la altura de la barra de progreso */
+    margin: 1em 0;
+    height: 25px;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-#progress-bar {
+    padding: 0 10px;
+  }
+  
+  #progress-bar {
     background-color: var(--primary-color);
     height: 100%;
     width: 0%;
-    border-radius: 10px;
-}
-
-#progress-text {
-    font-size: 12px;  /* Reducido el tamaño del texto en la barra de progreso */
-    color: #333;
-    padding-right: 10px;
-}
-
-#file-list {
-    margin-top: 20px;  /* Ajuste del margen */
-    color: #555;
-    text-align: left;
-    height: 180px;  /* Reducido el tamaño de la lista de archivos */
-    overflow-y: auto;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-}
-
-#file-names {
+    transition: width 0.3s ease;
+  }
+  
+  #progress-text {
+    font-size: 10px;
+    color: #000;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  
+  
+  #file-list {
+    margin-top: 1em;
+    border-top: 1px solid #ffffff33;
+    padding-top: 1em;
+    font-size: 10px;
+  }
+  
+  #file-names {
     list-style-type: none;
     padding-left: 0;
-}
-
-#file-names li {
-    margin: 5px 0;
-    font-size: 12px;  /* Ajustado el tamaño de la fuente de los nombres de archivo */
-    color: var(--primary-color);
-}
-
-.token-group {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-#github-token {
-    flex-grow: 1;
-}
-
-#create-token-btn {
-    background-color: var(--light-green);
-    color: white;
-    padding: 8px 12px;  /* Reducido el padding del botón */
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 12px;  /* Ajuste del tamaño de la fuente */
-    white-space: nowrap;
-}
-
-#create-token-btn:hover {
-    background-color: #1b4332;
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-    }
-}
+  }
+  
+  #file-names li {
+    margin-bottom: 5px;
+    color: #a4f5a4;
+  }
+  
