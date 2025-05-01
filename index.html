@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compresor Carpetas de GitHub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Compresor Carpetas de GitHub</h1>
+    <div class="input-group">
+      <input type="text" id="github-url" placeholder="Introduce la URL del directorio de GitHub" />
+    </div>
+    <div class="input-group token-group">
+      <input type="password" id="github-token" placeholder="Introduce tu token de GitHub (opcional)" />
+      <a href="https://github.com/settings/personal-access-tokens" target="_blank" id="create-token-btn">Crear Token</a>
+    </div>
+    <div class="input-group">
+      <button id="download-btn">Descargar ZIP</button>
+    </div>
+    <div id="status"></div>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+      <span id="progress-text">0 / 0 archivos</span>
+    </div>
+    <div id="file-list">
+      <h3>Archivos a comprimir:</h3>
+      <ul id="file-names"></ul>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
